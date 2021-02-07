@@ -60,7 +60,7 @@ EnvironmentFile=/etc/sysconfig/keyword
 ExecStart=/search.sh $WORD $LOG
 ```
 
-Создать файл таймера nano /etc/systemd/system/keyword.timer:
+Создать файл таймера /etc/systemd/system/keyword.timer:
 
 ```
 [Unit]
@@ -188,7 +188,7 @@ Documentation=man:apachectl(8)
 [Service]
 
 Type=notify
-EnvironmentFile=/etc/sysconfig/httpd-%I     # Добавляем переменную
+EnvironmentFile=/etc/sysconfig/httpd%I     # Добавляем переменную
 ExecStart=/usr/sbin/httpd $OPTIONS -DFOREGROUND
 ExecReload=/usr/sbin/httpd $OPTIONS -k graceful
 ExecStop=/bin/kill -WINCH ${MAINPID}
